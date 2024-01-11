@@ -1,0 +1,239 @@
+/* Basic Config------------------------------------------------------------------------------------ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Monte";
+  src: url("/Assets/montserrat.regular.ttf");
+}
+@font-face {
+  font-family: "Horror";
+  src: url("./Assets/DangerNightPersonalUse-owdl4.otf");
+}
+@font-face {
+    font-family: 'MonteBold';
+    src: url('./Assets/montserrat.bold.ttf');
+}
+::selection {
+  color: #d8ebeb;
+  background: #313536;
+}
+body {
+  width: 100%;
+  overflow: hidden;
+  font-family: "Monte";
+}
+/* Basic Config------------------------------------------------------------------------------------ */
+
+/* Navbar Starts Here--------------------------------------------------------------------------- */
+nav {
+  position: absolute;
+  min-height: 30px;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313536;
+  z-index: 9999;
+}
+nav .wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .wrapper .logo {
+  font-size: 22px;
+  pointer-events: none;
+  font-family: 'MonteBold';
+}
+nav .wrapper .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+nav .wrapper .menu svg {
+  cursor: pointer;
+  display: none;
+}
+nav .wrapper .menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+nav .wrapper .menu li {
+  cursor: pointer;
+  font-size: 15px;
+}
+nav .wrapper .menu li:hover{
+    color:yellowgreen
+}
+/* Navbar Specially for small devices */
+@media screen and (max-width: 520px) {
+  nav .wrapper .menu {
+    justify-content: flex-end;
+  }
+  nav .wrapper .menu .burger-btn {
+    display: flex;
+  }
+  nav .wrapper .menu ul {
+    z-index: -1;
+    flex-direction: column;
+    position: absolute;
+    top: 0vh;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(30px);
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+/* Navbar Ends Here---------------------------------------------------------------------------  */
+
+/* Main Landing Page Starts From Here */
+
+.landing-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("/Assets/Graphics/bg2.jpg") no-repeat;
+  background-size: cover;
+  background-position-x: 0;
+  animation: landingPageImgScroll 1.5s forwards
+    cubic-bezier(0.13, 0.42, 0.21, 0.97);
+}
+
+@keyframes landingPageImgScroll {
+  0% {
+    background-position-y: 0%;
+  }
+  100% {
+    background-position-y: 100%;
+  }
+}
+
+.landing-page .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+  color: #313536;
+  font-family: "Horror";
+  animation: landingPageBgTextFade 2s forwards ease-in-out;
+  animation: landingPageBgTextBounce 1s infinite alternate ease-in-out;
+  z-index: 10;
+}
+@keyframes landingPageBgTextFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes landingPageBgTextBounce{
+    0%{
+        margin-top: -5px;
+    }
+    100%{
+        margin-top: 5px;
+    }
+}
+.landing-page .fog {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  margin-bottom: -10%;
+  left: 0;
+  width: 60%;
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
+  filter: hue-rotate(130deg);
+}
+.landing-page .fog:nth-of-type(1) {
+  opacity: 0.1;
+  left: 10%;
+  width: 150%;
+  z-index: 11;
+  bottom: 10%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(2) {
+  width: 90%;
+  left: -76%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(3) {
+  opacity: 0.07;
+  width: 130%;
+  left: -23%;
+  top: 30%;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(4) {
+  opacity: 0.09;
+  width: 110%;
+  bottom: -10%;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(5) {
+  opacity: 0.1;
+  left: 5%;
+  z-index: 12;
+  width: 150%;
+  bottom: 10%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(6) {
+  width: 90%;
+  left: -87%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(7) {
+  opacity: 0.07;
+  width: 130%;
+  left: -67%;
+  top: 30%;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(8) {
+  opacity: 0.09;
+  width: 110%;
+  top: -10%;
+  z-index: 14;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+
+@keyframes landingPageFogAnimation {
+  0% {
+    margin-left: -50vw;
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.2;
+  }
+  100% {
+    margin-left: 50vw;
+    opacity: 0;
+  }
+}
