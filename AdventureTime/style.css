@@ -21,7 +21,8 @@
   background: #313536;
 }
 body {
-  width: 100%;
+  width: 100vw;
+  height:100vh;
   overflow: hidden;
   font-family: "Monte";
 }
