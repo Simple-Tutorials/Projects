@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: "Monte";
-  src: url("/Assets/montserrat.regular.ttf");
+  src: url("./Assets/montserrat.regular.ttf");
 }
 @font-face {
   font-family: "Horror";
@@ -104,7 +104,7 @@ nav .wrapper .menu li:hover{
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("/Assets/Graphics/bg2.jpg") no-repeat;
+  background: url("./Assets/Graphics/bg2.jpg") no-repeat;
   background-size: cover;
   background-position-x: 0;
   animation: landingPageImgScroll 1.5s forwards
